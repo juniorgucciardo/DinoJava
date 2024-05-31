@@ -1,4 +1,3 @@
-package com.utils.Dino;
 
 
 import javax.swing.*;
@@ -43,7 +42,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     }
 
     private void inicializarObstaculos() {
-        // Cria obstáculos iniciais
+        // Cria obstï¿½culos iniciais
         for (int i = 0; i < 3; i++) {
             obstaculos.add(new Obstacle(LARGURA + i * 300, CHAO, 20, 40));
         }
@@ -61,11 +60,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         this.setBackground(Color.BLACK);
 
-        // Desenha o chão
+        // Desenha o chï¿½o
         g.setColor(Color.GRAY);
         g.fillRect(0, CHAO + 20, LARGURA, ALTURA - CHAO);
 
-        // Desenha o dinossauro e obstáculos
+        // Desenha o dinossauro e obstï¿½culos
         dino.draw(g);
         for (Obstacle obstaculo : obstaculos) {
             obstaculo.draw(g);
@@ -76,14 +75,14 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             nuvem.draw(g);
         }
 
-        // Desenha a pontuação
+        // Desenha a pontuaï¿½ï¿½o
         g.setColor(Color.WHITE);
-        g.drawString("Pontuação: " + pontuacao, LARGURA - 120, 20);
+        g.drawString("Pontuaï¿½ï¿½o: " + pontuacao, LARGURA - 120, 20);
 
-        // Desenha mensagem de início
+        // Desenha mensagem de inï¿½cio
         if (!jogoIniciado) {
             g.setColor(Color.WHITE);
-            g.drawString("Pressione ESPAÇO para começar", LARGURA / 2 - 50, ALTURA / 2);
+            g.drawString("Pressione ESPAï¿½O para comeï¿½ar", LARGURA / 2 - 50, ALTURA / 2);
         }
     }
 
@@ -122,7 +121,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         for (Obstacle obstaculo : obstaculos) {
             if (dino.getBounds().intersects(obstaculo.getBounds())) {
                 timer.stop();
-                int opcao = JOptionPane.showConfirmDialog(this, "Game Over! Pontuação: " + pontuacao + "\nJogar novamente?", "Game Over", JOptionPane.YES_NO_OPTION);
+                int opcao = JOptionPane.showConfirmDialog(this, "Game Over! Pontuaï¿½ï¿½o: " + pontuacao + "\nJogar novamente?", "Game Over", JOptionPane.YES_NO_OPTION);
                 if (opcao == JOptionPane.YES_OPTION) {
                     reiniciarJogo();
                 } else {
